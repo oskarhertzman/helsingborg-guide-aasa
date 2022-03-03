@@ -1,22 +1,16 @@
-const jsonServer = require('json-server');
-const express = require('express');
-const server = jsonServer.create();
-const router = jsonServer.router('db.json');
-const middlewares = jsonServer.defaults();
-const port = process.env.PORT || 3000;
-
-server.use(middlewares);
-server.use(router);
-
 const path = require('path');
 
-const app = express();
+const express = require('express');
 
+const app = new express();
 
-app.use(express.static( __dirname+'./well-known', {dotfiles:'allow'} ));
+const PATH_TO_FILE = "/.well-known/apple-app-site-associtation"
+app.use(express.static(`./${PATH_TO_FILE}`));
 
-app.get('/*', function(req,res) {
-    res.sendFile(path.join(__dirname,'./well-known/apple-app-site-associtation'));
+app.get(PATH_TO_FILE, (req, res) => {
+    res.sendFile(path.resolve(__dirname, `.${PATH_TO_FILE}`));
 });
 
-server.listen(port);
+app.listen(4000, () => {
+    console.log('App listening on port 4000')
+})
