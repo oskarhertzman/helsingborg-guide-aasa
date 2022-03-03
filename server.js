@@ -12,10 +12,11 @@ const path = require('path');
 
 const app = express();
 
-app.use(express.static('./well-known'));
+
+app.use(express.static( __dirname+'./well-known', {dotfiles:'allow'} ));
 
 app.get('/*', function(req,res) {
-    res.sendFile(path.join(__dirname,'/apple-app-site-associtation'));
+    res.sendFile(path.join(__dirname,'./well-known/apple-app-site-associtation'));
 });
 
 server.listen(port);
