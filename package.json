@@ -1,7 +1,7 @@
 {
-  "name": "json-server-deploy",
+  "name": "helsingborg-guide-aasa",
   "version": "1.0.0",
-  "description": "Simple json database to deploy to the host of your choice",
+  "description": "Simple serve database for aasa for Helsingborg guide",
   "main": "server.js",
   "scripts": {
     "start": "serve"
@@ -9,7 +9,7 @@
   "keywords": [
     "json-server,heroku, node, REST API"
   ],
-  "author": "Jesper Orb",
+  "author": "Oskar Hertzman",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.3",
