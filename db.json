@@ -1,5 +1,5 @@
 {
-  "posts":[
+  "./well-known":[
     {
       "id" : 0,
       "title": "First post!",
